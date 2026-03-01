@@ -4,33 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spare Parts</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Spare Parts</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Part Name</th>
-                <th>Part Code</th>
-                <th>Category</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Part A</td>
-                <td>PA001</td>
-                <td>Category 1</td>
-                <td>$100</td>
-            </tr>
-            <tr>
-                <td>Part B</td>
-                <td>PB002</td>
-                <td>Category 2</td>
-                <td>$150</td>
-            </tr>
-            <!-- Add more parts as needed -->
-        </tbody>
-    </table>
+    <div class="sidebar">
+        <h2>Contact Us</h2>
+        <p>Address: 123 Spare Parts Lane, City, Country</p>
+        <button onclick="callUs()">Call Us</button>
+        <button onclick="whatsappUs()">WhatsApp</button>
+    </div>
+    <div class="content">
+        <h1>Welcome to Our Spare Parts Store</h1>
+        <p>Find the best spare parts at unbeatable prices!</p>
+    </div>
+    <script>
+        function callUs() {
+            window.location.href = 'tel:+1234567890';
+        }
+
+        function whatsappUs() {
+            window.open('https://wa.me/+1234567890', '_blank');
+        }
+    </script>
 </body>
 </html>
