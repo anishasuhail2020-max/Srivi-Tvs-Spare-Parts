@@ -1,62 +1,26 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-}
-
-.top-header {
-    background: #111;
-    color: white;
+.contact-box {
+    margin-top: 25px;
     padding: 12px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.top-header input {
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-}
-
-.container {
-    display: flex;
-    margin-top: 10px;
-}
-
-.sidebar {
-    width: 250px;
-    background: white;
-    padding: 15px;
-    border-right: 1px solid #ddd;
-}
-
-.sidebar select {
-    width: 100%;
-    padding: 8px;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
-.part {
-    background: white;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-left: 4px solid #0b5ed7;
-}
-
-footer {
-    background: #111;
-    color: white;
+.call-btn,
+.whatsapp-btn {
+    display: block;
     text-align: center;
+    margin-top: 10px;
     padding: 10px;
-    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.call-btn {
+    background: #0b5ed7;
+}
+
+.whatsapp-btn {
+    background: #25D366;
 }
