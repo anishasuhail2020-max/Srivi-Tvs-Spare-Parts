@@ -1,62 +1,38 @@
-let allParts = [];
+// Structured data objects for spare parts
+const spareParts = [
+    { name: 'Brake Pad', code: 'BP001', category: 'Brakes', price: 29.99 },
+    { name: 'Oil Filter', code: 'OF002', category: 'Engine', price: 15.99 },
+    { name: 'Spark Plug', code: 'SP003', category: 'Ignition', price: 8.99 },
+    { name: 'Battery', code: 'BAT004', category: 'Electrical', price: 89.99 }
+];
 
-function showParts() {
-    const model = document.getElementById("bikeModel").value;
-    const partsDiv = document.getElementById("partsList");
-
-    const data = {
-        apache: [
-            "Brake Pad – ₹450",
-            "Clutch Plate – ₹950",
-            "Oil Filter – ₹180"
-        ],
-        jupiter: [
-            "Drive Belt – ₹1200",
-            "Air Filter – ₹220",
-            "Brake Shoe – ₹350"
-        ],
-        ntorq: [
-            "Disc Pad – ₹480",
-            "CVT Belt – ₹1400",
-            "Spark Plug – ₹120"
-        ],
-        starcity: [
-            "Chain Kit – ₹1600",
-            "Brake Cable – ₹90",
-            "Headlight Bulb – ₹150"
-        ],
-        sport: [
-            "Rear Sprocket – ₹380",
-            "Front Brake Cable – ₹110",
-            "Clutch Wire – ₹130"
-        ],
-        raider: [
-            "Fuel Filter – ₹240",
-            "Disc Pad – ₹520",
-            "Oil Filter – ₹190"
-        ],
-        xl100: [
-            "Air Filter – ₹200",
-            "Spark Plug – ₹110",
-            "Brake Shoe – ₹300"
-        ]
-    };
-
-    allParts = data[model] || [];
-    displayParts(allParts);
-}
-
-function displayParts(parts) {
-    const partsDiv = document.getElementById("partsList");
-    partsDiv.innerHTML = "";
-
-    parts.forEach(p => {
-        partsDiv.innerHTML += `<div class=\"part\">${p}</div>`;
+// Function to display all parts
+function showParts(parts) {
+    parts.forEach(part => {
+        console.log(`Name: ${part.name}, Code: ${part.code}, Category: ${part.category}, Price: $${part.price}`);
     });
 }
 
-function searchParts() {
-    const q = document.getElementById("searchBox").value.toLowerCase();
-    const filtered = allParts.filter(p => p.toLowerCase().includes(q));
-    displayParts(filtered);
+// Function to filter parts by category
+function filterCategory(parts, category) {
+    return parts.filter(part => part.category.toLowerCase() === category.toLowerCase());
 }
+
+// Function to search for parts by name
+function searchParts(parts, name) {
+    return parts.filter(part => part.name.toLowerCase().includes(name.toLowerCase()));
+}
+
+// Function to display filtered/search results
+function display(parts) {
+    if (parts.length > 0) {
+        showParts(parts);
+    } else {
+        console.log('No parts found.');
+    }
+}
+
+// Example usage:
+// showParts(spareParts);
+// display(filterCategory(spareParts, 'Engine')); 
+// display(searchParts(spareParts, 'Brake'));
